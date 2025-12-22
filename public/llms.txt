@@ -1,0 +1,40 @@
+# Carbon Copy
+
+> Beautiful vintage form UI components for React
+> Package: @prnv/carbon-copy
+
+Carbon Copy is a React component library for building authentic carbon copy forms with typewriter aesthetics. Inspired by 1970s automotive build orders and vintage business documents.
+
+## Quick Start
+
+```bash
+npm install @prnv/carbon-copy
+```
+
+```tsx
+import '@prnv/carbon-copy/styles.css';
+import { FormField, VintageTable, Checkbox, DenseGrid } from '@prnv/carbon-copy';
+```
+
+## Components
+
+- **FormField** - Text inputs (underline, boxed, handwriting, dotted, minimal)
+- **Checkbox** - X or checkmark styles
+- **VintageTable** - Dense data tables
+- **StrikethroughCell** - Cross-hatch pattern for N/A
+- **DenseGrid** - Zero-gap grid layouts
+- **SectionHeader** - Styled headers
+- **OptionRow** - Label + code rows
+- **CodeTable** - Code/description tables
+- **YearBadge** - Decorative badges
+- **FormLayout** - Template layouts
+
+## Design Tokens
+
+Colors: Primary #324D88 (navy), Accent #8B1538 (maroon), Background #A8D5D8 (teal)
+Fonts: Berkeley Mono, American Typewriter, Courier (typewriter stack)
+
+## Full Documentation
+
+- Complete docs: https://carbon-copy.dev/docs
+- Full AI reference: https://carbon-copy.dev/llms-full.txt

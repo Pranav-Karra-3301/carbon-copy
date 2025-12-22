@@ -1,0 +1,100 @@
+/* Checkbox Component Styles */
+
+.checkbox {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  cursor: pointer;
+  font-family: "American Typewriter", "Courier Prime", monospace;
+  font-size: 0.875rem;
+  user-select: none;
+}
+
+.checkbox.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Label positioning */
+.right {
+  flex-direction: row;
+}
+
+.left {
+  flex-direction: row-reverse;
+}
+
+/* Hidden native input */
+.input {
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+  pointer-events: none;
+}
+
+/* Custom checkbox box */
+.box {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid var(--cc-border-primary, #324D88);
+  background-color: transparent;
+  flex-shrink: 0;
+  transition: background-color 0.1s ease;
+}
+
+/* Size variants */
+.sm {
+  width: 14px;
+  height: 14px;
+}
+
+.md {
+  width: 18px;
+  height: 18px;
+}
+
+.lg {
+  width: 24px;
+  height: 24px;
+}
+
+/* The mark (X, check, or fill) */
+.mark {
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: opacity 0.1s ease;
+  stroke: var(--cc-text-primary, #324D88);
+  stroke-width: 2;
+  stroke-linecap: square;
+  fill: none;
+}
+
+.markFill rect {
+  fill: var(--cc-text-primary, #324D88);
+  stroke: none;
+}
+
+/* Show mark when checked */
+.input:checked + .box .mark {
+  opacity: 1;
+}
+
+/* Focus styles */
+.input:focus-visible + .box {
+  outline: 2px solid #8B1538;
+  outline-offset: 2px;
+}
+
+/* Hover styles */
+.checkbox:hover:not(.disabled) .box {
+  background-color: #E8E5DC;
+}
+
+/* Label text */
+.label {
+  color: var(--cc-text-primary, #324D88);
+  letter-spacing: 0.05em;
+}

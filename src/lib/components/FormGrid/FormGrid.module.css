@@ -1,0 +1,92 @@
+/* FormGrid Component Styles */
+
+.formGrid {
+  display: grid;
+  width: 100%;
+  font-family: "American Typewriter", "Courier Prime", monospace;
+}
+
+/* Gap variants */
+.gapNone {
+  gap: 0;
+}
+
+.gapXs {
+  gap: 0.25rem;
+}
+
+.gapSm {
+  gap: 0.5rem;
+}
+
+.gapMd {
+  gap: 1rem;
+}
+
+.gapLg {
+  gap: 1.5rem;
+}
+
+/* Row gap overrides */
+.rowGapNone {
+  row-gap: 0;
+}
+
+.rowGapXs {
+  row-gap: 0.25rem;
+}
+
+.rowGapSm {
+  row-gap: 0.5rem;
+}
+
+.rowGapMd {
+  row-gap: 1rem;
+}
+
+.rowGapLg {
+  row-gap: 1.5rem;
+}
+
+/* Alignment */
+.alignStart {
+  align-items: start;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.alignEnd {
+  align-items: end;
+}
+
+.alignStretch {
+  align-items: stretch;
+}
+
+/* Background */
+.bgNone {
+  background-color: transparent;
+}
+
+.bgTeal {
+  background-color: #A8D5D8;
+  padding: 0.5rem;
+}
+
+.bgPaper {
+  background-color: #F5F2E8;
+  padding: 0.5rem;
+}
+
+/* Bordered */
+.bordered {
+  border: 1px solid var(--cc-border-primary, #324D88);
+  padding: 0.5rem;
+}
+
+/* Grid item */
+.formGridItem {
+  min-width: 0;
+}

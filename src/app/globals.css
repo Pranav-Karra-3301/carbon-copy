@@ -1,0 +1,93 @@
+/* Carbon Copy - Global Styles */
+
+/* Font Face - Berkeley Mono */
+@font-face {
+  font-family: 'Berkeley Mono';
+  src: url('/fonts/BerkeleyMonoTrial-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* CSS Custom Properties */
+:root {
+  /* Backgrounds */
+  --cc-bg-form: #A8D5D8;
+  --cc-bg-form-alt: #9CCBCE;
+  --cc-bg-paper: #F5F2E8;
+  --cc-bg-muted: #E8E5DC;
+
+  /* Headers */
+  --cc-header-primary: #8B1538;
+  --cc-header-secondary: #4A0D1F;
+  --cc-header-accent: #C41E3A;
+  --cc-header-navy: #1E3A5F;
+
+  /* Borders */
+  --cc-border-primary: #324D88;
+  --cc-border-thin: #4A6BA8;
+  --cc-border-muted: #6B8BC8;
+
+  /* Text */
+  --cc-text-primary: #324D88;
+  --cc-text-secondary: #4A6BA8;
+  --cc-text-on-dark: #F5F2E8;
+  --cc-text-muted: #6B8BC8;
+  --cc-text-typewriter: #324D88;
+  --cc-text-red: #8B1538;
+  --cc-text-handwriting: #324D88;
+
+  /* Typography */
+  --cc-font-typewriter: "Berkeley Mono", "American Typewriter", "Courier Prime", "Courier New", Courier, monospace;
+  --cc-font-mono: "Berkeley Mono", "IBM Plex Mono", "Consolas", "Monaco", monospace;
+}
+
+/* Reset */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  font-family: var(--cc-font-typewriter);
+  background-color: var(--cc-bg-form);
+  color: var(--cc-text-primary, #324D88);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: 100vh;
+}
+
+/* Paper texture effect */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 1000;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Print styles */
+@media print {
+  body {
+    background-color: white !important;
+  }
+
+  body::before {
+    display: none;
+  }
+}

@@ -1,0 +1,694 @@
+# Carbon Copy - Complete AI Documentation
+
+> Beautiful vintage form UI components for React
+> Package: @prnv/carbon-copy
+> Version: 0.0.1
+> License: MIT
+
+## Overview
+
+Carbon Copy is a React component library for building authentic carbon copy forms with typewriter aesthetics. Inspired by 1970s automotive build orders, invoices, and vintage business documents. The library prioritizes information density, visual hierarchy, and practical beauty.
+
+## Installation
+
+```bash
+npm install @prnv/carbon-copy
+# or
+yarn add @prnv/carbon-copy
+# or
+pnpm add @prnv/carbon-copy
+```
+
+## Setup
+
+```tsx
+// 1. Import styles in your root layout
+import '@prnv/carbon-copy/styles.css';
+
+// 2. Import components
+import { 
+  FormField, 
+  VintageTable, 
+  VintageTableRow,
+  VintageTableCell,
+  Checkbox,
+  DenseGrid,
+  DenseGridCell,
+  FormLayout,
+  FormLayoutArea,
+  SectionHeader,
+  StrikethroughCell,
+  YearBadge,
+  OptionRow,
+  CodeTable,
+  CodeTableRow,
+  LabeledInput,
+  PatternedField,
+  FormSection,
+  FormGrid,
+  FormGridItem,
+  CompactSection,
+  SubHeader,
+  SectionTitle,
+  DirectionalArrow,
+} from '@prnv/carbon-copy';
+```
+
+---
+
+## Complete Component Reference
+
+### FormField
+
+Text input with multiple style variants.
+
+```tsx
+interface FormFieldProps {
+  value: string;
+  onChange: (value: string) => void;
+  label?: string;
+  variant?: 'underline' | 'boxed' | 'minimal' | 'handwriting' | 'dotted' | 'none';
+  size?: 'xs' | 'sm' | 'md' | 'lg';
+  align?: 'left' | 'center' | 'right';
+  placeholder?: string;
+  disabled?: boolean;
+  readOnly?: boolean;
+  className?: string;
+}
+```
+
+Usage:
+```tsx
+<FormField 
+  label="Customer Name"
+  value={name}
+  onChange={setName}
+  variant="underline"
+  size="md"
+  align="left"
+/>
+```
+
+Variants explained:
+- `underline`: Classic underlined input (default)
+- `boxed`: Input with full border
+- `minimal`: No visible borders
+- `handwriting`: Cursive/italic font style
+- `dotted`: Dotted underline
+- `none`: No styling at all
+
+---
+
+### Checkbox
+
+Checkbox with X or checkmark styles.
+
+```tsx
+interface CheckboxProps {
+  checked: boolean;
+  onChange: (checked: boolean) => void;
+  markStyle?: 'x' | 'check';
+  size?: 'sm' | 'md' | 'lg';
+  disabled?: boolean;
+}
+```
+
+Usage:
+```tsx
+<Checkbox 
+  checked={isSelected}
+  onChange={setIsSelected}
+  markStyle="x"
+  size="md"
+/>
+```
+
+---
+
+### VintageTable
+
+Dense data table with vintage styling.
+
+```tsx
+interface VintageTableProps {
+  variant?: 'default' | 'dense' | 'dotted';
+  background?: 'default' | 'none' | 'paper';
+  children: React.ReactNode;
+}
+
+interface VintageTableRowProps {
+  children: React.ReactNode;
+}
+
+interface VintageTableCellProps {
+  variant?: 'default' | 'header' | 'subheader' | 'red';
+  align?: 'left' | 'center' | 'right';
+  children: React.ReactNode;
+}
+```
+
+Usage:
+```tsx
+<VintageTable variant="dense" background="none">
+  <thead>
+    <VintageTableRow>
+      <VintageTableCell variant="header">Column 1</VintageTableCell>
+      <VintageTableCell variant="header">Column 2</VintageTableCell>
+    </VintageTableRow>
+  </thead>
+  <tbody>
+    <VintageTableRow>
+      <VintageTableCell>Data 1</VintageTableCell>
+      <VintageTableCell align="center">Data 2</VintageTableCell>
+    </VintageTableRow>
+  </tbody>
+</VintageTable>
+```
+
+---
+
+### StrikethroughCell
+
+Cell with cross-hatch pattern for unavailable/N/A options.
+
+```tsx
+interface StrikethroughCellProps {
+  direction?: 'both' | 'diagonal-up' | 'diagonal-down' | 'horizontal' | 'vertical';
+  density?: 'sparse' | 'normal' | 'dense';
+  children?: React.ReactNode;
+}
+```
+
+Usage:
+```tsx
+<StrikethroughCell direction="both" density="normal" />
+```
+
+---
+
+### DenseGrid
+
+Zero-gap CSS grid for dense layouts.
+
+```tsx
+interface DenseGridProps {
+  columns: string; // CSS grid-template-columns value
+  collapsed?: boolean; // Removes gaps
+  bordered?: boolean; // Adds outer border
+  children: React.ReactNode;
+  className?: string;
+}
+
+interface DenseGridCellProps {
+  padding?: 'none' | 'xs' | 'sm' | 'md';
+  size?: 'xs' | 'sm' | 'md';
+  weight?: 'normal' | 'bold';
+  textColor?: 'default' | 'red' | 'muted';
+  borderTop?: boolean;
+  borderRight?: boolean;
+  borderBottom?: boolean;
+  borderLeft?: boolean;
+  bordered?: boolean; // All borders
+  colSpan?: number;
+  rowSpan?: number;
+  align?: 'left' | 'center' | 'right';
+  valign?: 'top' | 'middle' | 'bottom';
+  children: React.ReactNode;
+}
+```
+
+Usage:
+```tsx
+<DenseGrid columns="1fr 1fr 1fr" collapsed bordered>
+  <DenseGridCell padding="sm" borderRight borderBottom>
+    Cell 1
+  </DenseGridCell>
+  <DenseGridCell padding="sm" borderRight borderBottom>
+    Cell 2
+  </DenseGridCell>
+  <DenseGridCell padding="sm" borderBottom>
+    Cell 3
+  </DenseGridCell>
+</DenseGrid>
+```
+
+---
+
+### FormLayout
+
+Template-based form layouts.
+
+```tsx
+interface FormLayoutProps {
+  template: 'header-2col' | 'footer' | 'custom';
+  bordered?: boolean;
+  children: React.ReactNode;
+}
+
+interface FormLayoutAreaProps {
+  border?: 'none' | 'left' | 'right' | 'top' | 'bottom';
+  align?: 'start' | 'center' | 'end';
+  children: React.ReactNode;
+}
+```
+
+Usage:
+```tsx
+<FormLayout template="header-2col" bordered>
+  <FormLayoutArea>Left content</FormLayoutArea>
+  <FormLayoutArea border="left">Right content</FormLayoutArea>
+</FormLayout>
+```
+
+---
+
+### SectionHeader
+
+Styled section headers.
+
+```tsx
+interface SectionHeaderProps {
+  variant?: 'primary' | 'dark' | 'navy' | 'light';
+  size?: 'sm' | 'md' | 'lg';
+  children: React.ReactNode;
+}
+```
+
+Usage:
+```tsx
+<SectionHeader variant="navy" size="md">
+  Section Title
+</SectionHeader>
+```
+
+---
+
+### SectionTitle
+
+Smaller section titles for subsections.
+
+```tsx
+interface SectionTitleProps {
+  color?: 'navy' | 'red' | 'default';
+  size?: 'xs' | 'sm' | 'md';
+  border?: 'none' | 'top' | 'bottom' | 'all';
+  suffix?: string;
+  children: React.ReactNode;
+}
+```
+
+---
+
+### SubHeader
+
+Sub-section headers with optional includes/also-see references.
+
+```tsx
+interface SubHeaderProps {
+  color?: 'navy' | 'red' | 'default';
+  size?: 'xs' | 'sm' | 'md';
+  border?: 'none' | 'top' | 'bottom';
+  hasIncludes?: boolean;
+  alsoSee?: string;
+  children: React.ReactNode;
+}
+```
+
+---
+
+### OptionRow
+
+Label + code option rows for dense option lists.
+
+```tsx
+interface OptionRowProps {
+  label: string;
+  code?: string;
+  prefix?: string;
+  hasCheckbox?: boolean;
+  checked?: boolean;
+  onCheck?: (checked: boolean) => void;
+  size?: 'xs' | 'sm' | 'md';
+}
+```
+
+Usage:
+```tsx
+<OptionRow 
+  label="Air Conditioning" 
+  code="C60" 
+  hasCheckbox 
+  checked={false}
+/>
+```
+
+---
+
+### CodeTable
+
+Table for code/description pairs.
+
+```tsx
+interface CodeTableProps {
+  compact?: boolean;
+  border?: 'none' | 'all';
+  children: React.ReactNode;
+}
+
+interface CodeTableRowProps {
+  code: string;
+  label: string;
+  hasCheckbox?: boolean;
+  checked?: boolean;
+  onCheck?: (checked: boolean) => void;
+}
+```
+
+Usage:
+```tsx
+<CodeTable compact>
+  <CodeTableRow code="M35" label="Turbo Hydra-Matic" hasCheckbox />
+  <CodeTableRow code="M40" label="4-Speed" hasCheckbox checked />
+</CodeTable>
+```
+
+---
+
+### LabeledInput
+
+Label + input combination component.
+
+```tsx
+interface LabeledInputProps {
+  label: string;
+  value: string;
+  onChange: (value: string) => void;
+  variant?: 'underline' | 'boxed' | 'none';
+  labelWidth?: 'sm' | 'md' | 'lg';
+  layout?: 'horizontal' | 'vertical';
+}
+```
+
+---
+
+### YearBadge
+
+Decorative year badge for headers/footers.
+
+```tsx
+interface YearBadgeProps {
+  year: string;
+  preliminary?: boolean;
+  subtitle?: string;
+  variant?: 'default' | 'light';
+}
+```
+
+Usage:
+```tsx
+<YearBadge 
+  year="1970" 
+  preliminary 
+  subtitle="Model Year"
+/>
+```
+
+---
+
+### PatternedField
+
+Field with cross-hatch background pattern.
+
+```tsx
+interface PatternedFieldProps {
+  pattern?: 'crosshatch' | 'diagonal' | 'grid';
+  density?: 'sparse' | 'normal' | 'dense';
+  children?: React.ReactNode;
+}
+```
+
+---
+
+### DirectionalArrow
+
+Decorative directional arrow.
+
+```tsx
+interface DirectionalArrowProps {
+  direction?: 'up' | 'down' | 'left' | 'right';
+  size?: 'sm' | 'md' | 'lg';
+  color?: string;
+}
+```
+
+---
+
+### FormSection
+
+Wrapper for form sections with headers.
+
+```tsx
+interface FormSectionProps {
+  title: string;
+  headerVariant?: 'primary' | 'navy' | 'dark';
+  children: React.ReactNode;
+}
+```
+
+---
+
+### FormGrid
+
+Grid wrapper for form layouts.
+
+```tsx
+interface FormGridProps {
+  columns?: number | string;
+  gap?: 'none' | 'xs' | 'sm' | 'md';
+  children: React.ReactNode;
+}
+
+interface FormGridItemProps {
+  colSpan?: number;
+  children: React.ReactNode;
+}
+```
+
+---
+
+### CompactSection
+
+Compact section wrapper.
+
+```tsx
+interface CompactSectionProps {
+  title?: string;
+  titleColor?: 'navy' | 'red';
+  hasAsterisk?: boolean;
+  border?: 'none' | 'top' | 'all';
+  padding?: 'none' | 'xs' | 'sm';
+  children: React.ReactNode;
+}
+```
+
+---
+
+## Theming
+
+### CSS Variables
+
+Override these CSS custom properties to customize the look:
+
+```css
+:root {
+  /* Colors */
+  --cc-color-primary: #324D88;      /* Primary blue */
+  --cc-color-secondary: #1E3A5F;    /* Navy blue */
+  --cc-color-accent: #8B1538;       /* Maroon red */
+  --cc-color-background: #A8D5D8;   /* Teal background */
+  --cc-color-surface: #F5F2E8;      /* Paper surface */
+  --cc-color-text: #324D88;         /* Primary text */
+  --cc-color-text-muted: #6B8BC8;   /* Muted text */
+  --cc-color-border: #324D88;       /* Border color */
+  --cc-color-error: #8B1538;        /* Error/red */
+  --cc-color-success: #2D5A27;      /* Success/green */
+  
+  /* Fonts */
+  --cc-font-typewriter: "Berkeley Mono", "American Typewriter", "Courier Prime", monospace;
+  --cc-font-mono: "Berkeley Mono", "IBM Plex Mono", "Consolas", monospace;
+  --cc-font-handwriting: "Caveat", "Dancing Script", cursive;
+  
+  /* Spacing */
+  --cc-spacing-xs: 0.25rem;
+  --cc-spacing-sm: 0.5rem;
+  --cc-spacing-md: 1rem;
+  --cc-spacing-lg: 1.5rem;
+  --cc-spacing-xl: 2rem;
+}
+```
+
+### Preset Themes
+
+```tsx
+import { themes, generateCSSVariables } from '@prnv/carbon-copy';
+
+// Available themes: default, sepia, dark, minimal
+const cssVars = generateCSSVariables(themes.sepia);
+```
+
+#### Sepia Theme
+```css
+:root {
+  --cc-color-primary: #5C4033;
+  --cc-color-background: #F4E9D9;
+  --cc-color-surface: #FFF8F0;
+  --cc-color-text: #4A3728;
+}
+```
+
+#### Dark Theme
+```css
+:root {
+  --cc-color-primary: #7EB8DA;
+  --cc-color-background: #1A1A2E;
+  --cc-color-surface: #16213E;
+  --cc-color-text: #E8E8E8;
+}
+```
+
+#### Minimal Theme
+```css
+:root {
+  --cc-color-primary: #333333;
+  --cc-color-background: #FFFFFF;
+  --cc-color-surface: #F5F5F5;
+  --cc-color-text: #333333;
+}
+```
+
+---
+
+## Layout Patterns
+
+### 2-Column Header
+
+```tsx
+<DenseGrid columns="1fr 1fr" collapsed bordered>
+  <DenseGridCell padding="md" borderRight>
+    {/* Dealer/Customer info */}
+    <FormField label="Name" value={name} onChange={setName} />
+    <FormField label="Address" value={address} onChange={setAddress} />
+  </DenseGridCell>
+  <DenseGridCell padding="none">
+    {/* Order details grid */}
+    <DenseGrid columns="80px 100px" collapsed>
+      <DenseGridCell padding="xs" borderBottom borderRight>Date</DenseGridCell>
+      <DenseGridCell padding="xs" borderBottom>1-17-70</DenseGridCell>
+    </DenseGrid>
+  </DenseGridCell>
+</DenseGrid>
+```
+
+### Multi-Column Options
+
+```tsx
+<DenseGrid columns="1fr 1fr 1fr 1fr" collapsed bordered>
+  <DenseGridCell borderRight>
+    <SectionTitle>Model Options</SectionTitle>
+    <OptionRow label="Option A" code="AA1" hasCheckbox />
+  </DenseGridCell>
+  <DenseGridCell borderRight>
+    <SectionTitle>Transmission</SectionTitle>
+    <CodeTable compact>
+      <CodeTableRow code="M35" label="Auto" />
+    </CodeTable>
+  </DenseGridCell>
+  {/* ... more columns */}
+</DenseGrid>
+```
+
+### Signature Block
+
+```tsx
+<div className="signature-block">
+  <FormField 
+    label="Dealer Signature" 
+    variant="handwriting"
+    value={signature}
+    onChange={setSignature}
+  />
+  <FormField 
+    label="Date" 
+    variant="underline"
+    size="sm"
+    value={date}
+    onChange={setDate}
+  />
+</div>
+```
+
+---
+
+## TypeScript Types
+
+```tsx
+import type { 
+  // Theme types
+  ThemeColor,
+  ThemeSize,
+  ThemeVariant,
+  ThemeFont,
+  ThemeBorder,
+  ThemePattern,
+  ThemeConfig,
+  ThemeName,
+  
+  // Component props
+  FormFieldProps,
+  CheckboxProps,
+  VintageTableProps,
+  VintageTableRowProps,
+  VintageTableCellProps,
+  StrikethroughCellProps,
+  DenseGridProps,
+  DenseGridCellProps,
+  SectionHeaderProps,
+  // ... etc
+} from '@prnv/carbon-copy';
+```
+
+---
+
+## Best Practices
+
+1. **Dense Layouts**: Use collapsed DenseGrid for authentic carbon copy density
+2. **Typography**: Prefer typewriter fonts; use handwriting for signatures only
+3. **Colors**: Navy blue (#324D88) for text, red (#8B1538) for emphasis
+4. **Strikethrough**: Use StrikethroughCell for N/A or unavailable options
+5. **Headers**: Use SectionHeader for major sections, SectionTitle for subsections
+6. **Spacing**: Keep padding minimal (xs, sm) for dense forms
+7. **Borders**: Use 1px borders consistently; 2px for outer containers
+
+---
+
+## Browser Support
+
+- Chrome 90+
+- Firefox 88+
+- Safari 14+
+- Edge 90+
+
+---
+
+## Resources
+
+- Documentation: https://carbon-copy.dev/docs
+- GitHub: https://github.com/prnv/carbon-copy
+- npm: https://npmjs.com/package/@prnv/carbon-copy
+- llms.txt: https://carbon-copy.dev/llms.txt
+
+---
+
+## License
+
+MIT License - Copyright (c) 2024 Pranav Karra

@@ -1,0 +1,101 @@
+/* FormLayout - Complex form layout system */
+
+.formLayout {
+  display: grid;
+  width: 100%;
+  font-family: var(--cc-font-typewriter);
+}
+
+/* Gap variants */
+.gapNone {
+  gap: 0;
+}
+
+.gapXs {
+  gap: 1px;
+}
+
+.gapSm {
+  gap: 0.25rem;
+}
+
+/* Bordered */
+.bordered {
+  border: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.borderWeightThin {
+  border-width: 1px;
+}
+
+.borderWeightMedium {
+  border-width: 2px;
+}
+
+/* Template presets */
+.header-2col {
+  grid-template-columns: 1fr 1fr;
+}
+
+.body-4col {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.body-3col {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.footer {
+  grid-template-columns: 1fr auto 1fr;
+  padding: 0.5rem 0.75rem;
+}
+
+/* Layout Area */
+.formLayoutArea {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+/* Area borders */
+.borderNone {
+  border: none;
+}
+
+.borderAll {
+  border: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.borderLeft {
+  border-left: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.borderRight {
+  border-right: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.borderTop {
+  border-top: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.borderBottom {
+  border-bottom: 1px solid var(--cc-border-primary, #324D88);
+}
+
+/* Area alignment */
+.alignStart {
+  align-items: flex-start;
+}
+
+.alignCenter {
+  align-items: center;
+}
+
+.alignEnd {
+  align-items: flex-end;
+}
+
+.alignStretch {
+  align-items: stretch;
+}
+

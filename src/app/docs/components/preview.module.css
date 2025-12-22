@@ -1,0 +1,192 @@
+/* Component Preview Styles */
+
+.preview {
+  margin: 1.5rem 0;
+  border: 2px solid var(--cc-border-primary, #324D88);
+  background-color: var(--cc-bg-paper, #F5F2E8);
+}
+
+.previewHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0.75rem;
+  background-color: rgba(50, 77, 136, 0.1);
+  border-bottom: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.previewTitle {
+  font-family: var(--cc-font-typewriter);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--cc-header-navy, #1E3A5F);
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.toggleButton {
+  font-family: var(--cc-font-mono);
+  font-size: 0.625rem;
+  color: var(--cc-text-muted, #6B8BC8);
+  background: none;
+  border: 1px solid var(--cc-border-muted, #6B8BC8);
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+}
+
+.toggleButton:hover {
+  color: var(--cc-text-primary, #324D88);
+  border-color: var(--cc-border-primary, #324D88);
+  background-color: rgba(50, 77, 136, 0.1);
+}
+
+.previewDescription {
+  font-family: var(--cc-font-typewriter);
+  font-size: 0.75rem;
+  color: var(--cc-text-muted, #6B8BC8);
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  border-bottom: 1px dotted var(--cc-border-muted, #6B8BC8);
+}
+
+.previewContent {
+  min-height: 100px;
+}
+
+.componentArea {
+  padding: 1.5rem;
+  background-color: var(--cc-bg-form, #A8D5D8);
+}
+
+.codeBlock {
+  margin: 0;
+  padding: 1rem;
+  background-color: #1E3A5F;
+  color: #E8E8E8;
+  font-family: var(--cc-font-mono);
+  font-size: 0.6875rem;
+  line-height: 1.6;
+  overflow-x: auto;
+  border: none;
+}
+
+.codeBlock code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+}
+
+/* Props Table */
+.propsTable {
+  margin: 1.5rem 0;
+  overflow-x: auto;
+}
+
+.propsTable table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--cc-font-typewriter);
+  font-size: 0.75rem;
+  border: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.propsTable th {
+  background-color: rgba(50, 77, 136, 0.15);
+  font-weight: 700;
+  text-align: left;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--cc-border-primary, #324D88);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  white-space: nowrap;
+}
+
+.propsTable td {
+  padding: 0.625rem 0.75rem;
+  border: 1px solid var(--cc-border-muted, #6B8BC8);
+  vertical-align: top;
+  line-height: 1.5;
+}
+
+.propsTable code {
+  font-family: var(--cc-font-mono);
+  font-size: 0.625rem;
+  background-color: rgba(50, 77, 136, 0.1);
+  padding: 0.125rem 0.375rem;
+  border: 1px solid var(--cc-border-muted, #6B8BC8);
+  display: inline-block;
+  line-height: 1.4;
+  word-break: break-word;
+}
+
+.typeCell {
+  min-width: 180px;
+  max-width: 280px;
+}
+
+.typeCode {
+  color: var(--cc-text-red, #8B1538);
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.nameCell {
+  white-space: nowrap;
+  font-weight: 600;
+}
+
+.defaultCell {
+  white-space: nowrap;
+}
+
+.descCell {
+  min-width: 200px;
+}
+
+/* Variant Grid */
+.variantGrid {
+  margin: 1.5rem 0;
+}
+
+.variantTitle {
+  font-family: var(--cc-font-typewriter);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--cc-header-navy, #1E3A5F);
+  margin: 0 0 0.75rem;
+  padding-bottom: 0.25rem;
+  border-bottom: 1px dotted var(--cc-border-muted, #6B8BC8);
+}
+
+.variantItems {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 1rem;
+}
+
+.variantItem {
+  border: 1px solid var(--cc-border-muted, #6B8BC8);
+  background-color: var(--cc-bg-paper, #F5F2E8);
+}
+
+.variantLabel {
+  display: block;
+  font-family: var(--cc-font-mono);
+  font-size: 0.625rem;
+  color: var(--cc-text-muted, #6B8BC8);
+  padding: 0.25rem 0.5rem;
+  background-color: rgba(50, 77, 136, 0.05);
+  border-bottom: 1px solid var(--cc-border-muted, #6B8BC8);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.variantContent {
+  padding: 1rem;
+  background-color: var(--cc-bg-form, #A8D5D8);
+}
+

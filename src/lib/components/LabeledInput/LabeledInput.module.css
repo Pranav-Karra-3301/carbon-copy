@@ -1,0 +1,149 @@
+/* LabeledInput - Compact label + input field */
+
+.labeledInput {
+  display: flex;
+  font-family: var(--cc-font-typewriter);
+  color: var(--cc-text-primary, #324D88);
+}
+
+/* Layout variants */
+.layoutHorizontal {
+  flex-direction: row;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.layoutVertical {
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.125rem;
+}
+
+.layoutStacked {
+  flex-direction: column;
+  align-items: stretch;
+  gap: 0;
+}
+
+/* Size variants */
+.sizeXs {
+  font-size: 0.625rem;
+}
+
+.sizeXs .input {
+  font-size: 0.75rem;
+}
+
+.sizeSm {
+  font-size: 0.75rem;
+}
+
+.sizeSm .input {
+  font-size: 0.875rem;
+}
+
+.sizeMd {
+  font-size: 0.875rem;
+}
+
+.sizeMd .input {
+  font-size: 1rem;
+}
+
+/* Label */
+.label {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  font-weight: 500;
+  flex-shrink: 0;
+  color: var(--cc-text-primary, #324D88);
+}
+
+/* Label widths */
+.labelWidthAuto {
+  width: auto;
+}
+
+.labelWidthSm {
+  width: 4rem;
+}
+
+.labelWidthMd {
+  width: 6rem;
+}
+
+.labelWidthLg {
+  width: 8rem;
+}
+
+/* Input */
+.input {
+  font-family: var(--cc-font-typewriter);
+  color: var(--cc-text-primary, #324D88);
+  background: transparent;
+  padding: 0.125rem 0.25rem;
+  min-width: 0;
+}
+
+/* Input widths */
+.inputWidthAuto {
+  width: auto;
+  flex: 0 1 auto;
+}
+
+.inputWidthSm {
+  width: 3rem;
+}
+
+.inputWidthMd {
+  width: 5rem;
+}
+
+.inputWidthLg {
+  width: 8rem;
+}
+
+.inputWidthFull {
+  width: 100%;
+  flex: 1;
+}
+
+/* Variant: Underline */
+.variantUnderline {
+  border: none;
+  border-bottom: 1px solid var(--cc-border-primary, #324D88);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Variant: Box */
+.variantBox {
+  border: 1px solid var(--cc-border-primary, #324D88);
+}
+
+/* Variant: Dotted */
+.variantDotted {
+  border: none;
+  border-bottom: 1px dotted var(--cc-border-muted, #6B8BC8);
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* Variant: None */
+.variantNone {
+  border: none;
+  padding: 0;
+}
+
+/* Handwritten style */
+.handwritten {
+  font-style: italic;
+  font-family: var(--cc-font-typewriter);
+}
+
+/* Focus states */
+.input:focus {
+  outline: none;
+  border-color: var(--cc-text-red, #8B1538);
+}
+

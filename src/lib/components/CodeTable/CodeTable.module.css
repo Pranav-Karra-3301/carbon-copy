@@ -1,0 +1,165 @@
+/* CodeTable - Dense code/description table */
+
+.codeTable {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--cc-font-typewriter);
+  font-size: 0.75rem;
+  color: var(--cc-text-primary, #324D88);
+}
+
+/* Compact mode */
+.compact .codeTableRow {
+  padding: 0.0625rem 0.25rem;
+}
+
+/* Border variants */
+.borderNone .codeTableRow {
+  border-bottom: none;
+}
+
+.borderRows .codeTableRow {
+  border-bottom: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.borderRows .codeTableRow:last-child {
+  border-bottom: none;
+}
+
+.borderAll {
+  border: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.borderAll .codeTableRow {
+  border-bottom: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.borderAll .codeTableRow:last-child {
+  border-bottom: none;
+}
+
+.borderDotted .codeTableRow {
+  border-bottom: 1px dotted var(--cc-border-muted, #6B8BC8);
+}
+
+.borderDotted .codeTableRow:last-child {
+  border-bottom: none;
+}
+
+/* Hide columns */
+.hideCode .code {
+  display: none;
+}
+
+.hideCheckbox .checkbox {
+  display: none;
+}
+
+/* Row */
+.codeTableRow {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+  padding: 0.125rem 0.25rem;
+}
+
+/* Row border overrides */
+.rowBorderNone {
+  border-bottom: none !important;
+}
+
+.rowBorderBottom {
+  border-bottom: 1px solid var(--cc-border-primary, #324D88) !important;
+}
+
+.rowBorderDotted {
+  border-bottom: 1px dotted var(--cc-border-muted, #6B8BC8) !important;
+}
+
+/* Code */
+.code {
+  flex-shrink: 0;
+  min-width: 2rem;
+  font-weight: 500;
+}
+
+/* Code position */
+.codeLeft .codeTableRow {
+  flex-direction: row;
+}
+
+.codeRight .codeTableRow {
+  flex-direction: row;
+}
+
+.codeRight .code {
+  order: 2;
+  text-align: right;
+}
+
+.codeRight .labelArea {
+  order: 1;
+}
+
+.codeRight .checkbox {
+  order: 3;
+}
+
+/* Label area */
+.labelArea {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  min-width: 0;
+}
+
+.label {
+  /* Main label */
+}
+
+.subLabel {
+  font-size: 0.625rem;
+  margin-left: 0.5rem;
+}
+
+.subLabelDefault {
+  color: var(--cc-text-primary, #324D88);
+  font-style: italic;
+}
+
+.subLabelRed {
+  color: var(--cc-text-red, #8B1538);
+}
+
+.subLabelMuted {
+  color: var(--cc-text-muted, #6B8BC8);
+  font-style: italic;
+}
+
+/* Checkbox */
+.checkbox {
+  flex-shrink: 0;
+  width: 0.75rem;
+  height: 0.75rem;
+  border: 1px solid var(--cc-border-primary, #324D88);
+  background: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  margin-left: auto;
+}
+
+.checkbox:hover {
+  background-color: rgba(50, 77, 136, 0.1);
+}
+
+.checkMark {
+  font-size: 0.625rem;
+  line-height: 1;
+  color: var(--cc-text-primary, #324D88);
+  font-weight: 700;
+}
+

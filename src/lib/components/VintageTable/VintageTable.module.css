@@ -1,0 +1,199 @@
+/* VintageTable Component Styles */
+
+.vintageTable {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--cc-font-typewriter);
+  font-size: 0.875rem;
+  letter-spacing: 0.05em;
+}
+
+/* Background variants */
+.bgTeal {
+  background-color: transparent;
+}
+
+.bgPaper {
+  background-color: transparent;
+}
+
+.bgNone {
+  background-color: transparent;
+}
+
+/* Border styles */
+.borderThin {
+  border: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.borderMedium {
+  border: 2px solid var(--cc-border-primary, #324D88);
+}
+
+.borderThick {
+  border: 3px solid var(--cc-border-primary, #324D88);
+}
+
+/* Variant: Default */
+.default .vintageCell {
+  padding: 0.375rem 0.5rem;
+}
+
+/* Variant: Dense (tighter spacing) */
+.dense .vintageCell {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.75rem;
+}
+
+/* Variant: Ledger (alternating rows) */
+.ledger .vintageRow:nth-child(even) {
+  background-color: #9CCBCE;
+}
+
+/* Variant: Dotted separators */
+.dotted .vintageRow:not(:last-child) .vintageCell {
+  border-bottom: 1px dotted #666666;
+}
+
+/* Row styles */
+.vintageRow {
+  transition: background-color 0.1s ease;
+}
+
+.rowDefault {
+  /* Default row - no special styling */
+}
+
+.rowHeader {
+  background-color: transparent;
+  color: var(--cc-text-red, #8B1538);
+  font-weight: 700;
+}
+
+.rowSubheader {
+  background-color: transparent;
+  color: var(--cc-text-red, #8B1538);
+  font-weight: 700;
+}
+
+.rowTotal {
+  font-weight: 700;
+  border-top: 2px solid var(--cc-border-primary, #324D88);
+}
+
+.rowHighlighted {
+  background-color: #FFE4B5;
+}
+
+/* Cell styles */
+.vintageCell {
+  padding: 0.25rem 0.5rem;
+  border: 1px solid var(--cc-border-primary, #324D88);
+  background-color: transparent;
+}
+
+.cellDefault {
+  /* Default cell styling */
+}
+
+.cellHeader {
+  background-color: transparent;
+  color: var(--cc-text-red, #8B1538);
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.cellLabel {
+  font-weight: 500;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cc-text-primary, #324D88);
+}
+
+.cellValue {
+  font-family: var(--cc-font-typewriter);
+  letter-spacing: 0.08em;
+  color: var(--cc-text-primary, #324D88);
+}
+
+.cellRed {
+  color: var(--cc-text-red, #8B1538);
+  font-weight: 500;
+}
+
+/* Border overrides */
+.noBorder {
+  border: none;
+}
+
+.borderRight {
+  border-right: 2px solid var(--cc-border-primary, #324D88);
+}
+
+.borderBottom {
+  border-bottom: 2px solid var(--cc-border-primary, #324D88);
+}
+
+.borderLeft {
+  border-left: 2px solid var(--cc-border-primary, #324D88);
+}
+
+.borderTop {
+  border-top: 2px solid var(--cc-border-primary, #324D88);
+}
+
+/* Interactive cells */
+.clickable {
+  cursor: pointer;
+}
+
+.clickable:hover {
+  background-color: rgba(0, 0, 0, 0.05);
+}
+
+.clickable:focus {
+  outline: 2px solid #8B1538;
+  outline-offset: -2px;
+}
+
+/* Header component */
+.vintageHeader {
+  padding: 0.5rem 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border: 1px solid var(--cc-border-primary, #324D88);
+  background-color: transparent;
+}
+
+.headerPrimary {
+  background-color: transparent;
+  color: var(--cc-text-red, #8B1538);
+  font-weight: 700;
+}
+
+.headerSecondary {
+  background-color: transparent;
+  color: var(--cc-text-red, #8B1538);
+  font-weight: 700;
+}
+
+.headerSection {
+  background-color: transparent;
+  color: var(--cc-header-navy, #1E3A5F);
+  font-weight: 700;
+}
+
+/* Caption styling */
+.vintageCaption {
+  caption-side: top;
+  text-align: left;
+  font-weight: 700;
+  padding: 0.5rem 0;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--cc-text-primary, #324D88);
+}

@@ -1,0 +1,232 @@
+/* Code Block with Copy Button */
+
+.codeBlockWrapper {
+  margin: 1rem 0;
+  border: 2px solid var(--cc-border-primary, #324D88);
+  background-color: #1E3A5F;
+  overflow: hidden;
+}
+
+.codeHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.375rem 0.75rem;
+  background-color: rgba(255, 255, 255, 0.05);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.language {
+  font-family: var(--cc-font-mono);
+  font-size: 0.625rem;
+  color: rgba(255, 255, 255, 0.5);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.copyButton {
+  font-family: var(--cc-font-mono);
+  font-size: 0.625rem;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.copyButton:hover {
+  background: rgba(255, 255, 255, 0.2);
+  color: #fff;
+}
+
+.codeBlock {
+  margin: 0;
+  padding: 1rem;
+  font-family: var(--cc-font-mono);
+  font-size: 0.75rem;
+  line-height: 1.6;
+  color: #E8E8E8;
+  overflow-x: auto;
+}
+
+.codeBlock code {
+  background: none;
+  border: none;
+  padding: 0;
+  color: inherit;
+}
+
+/* Syntax Highlighting - Tasteful, subtle colors */
+.keyword {
+  color: #7EB8DA;
+}
+
+.string {
+  color: #A8D5A2;
+}
+
+.comment {
+  color: #6B8BC8;
+  font-style: italic;
+}
+
+.tag {
+  color: #E8B87D;
+}
+
+.number {
+  color: #D4A5C9;
+}
+
+.property {
+  color: #C9D4E8;
+}
+
+/* Page Actions - Top of page */
+.pageActionsTop {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dotted var(--cc-border-muted, #6B8BC8);
+}
+
+.pageActions {
+  display: flex;
+  gap: 0.5rem;
+  margin: 1.5rem 0;
+  padding-top: 1rem;
+  border-top: 1px dotted var(--cc-border-muted, #6B8BC8);
+}
+
+.actionButton {
+  font-family: var(--cc-font-mono);
+  font-size: 0.625rem;
+  color: var(--cc-text-muted, #6B8BC8);
+  background: transparent;
+  border: 1px solid var(--cc-border-muted, #6B8BC8);
+  padding: 0.375rem 0.75rem;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.actionButton:hover {
+  color: var(--cc-text-primary, #324D88);
+  border-color: var(--cc-border-primary, #324D88);
+  background-color: rgba(50, 77, 136, 0.1);
+}
+
+/* Coming Soon */
+.comingSoon {
+  text-align: center;
+  padding: 3rem 2rem;
+  border: 2px dashed var(--cc-border-muted, #6B8BC8);
+  background-color: rgba(50, 77, 136, 0.05);
+  margin: 2rem 0;
+}
+
+.comingSoonIcon {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+  opacity: 0.5;
+}
+
+.comingSoon h2 {
+  font-family: var(--cc-font-typewriter);
+  font-size: 1.5rem;
+  color: var(--cc-text-muted, #6B8BC8);
+  margin: 0 0 1rem;
+  border: none;
+}
+
+.comingSoon p {
+  font-family: var(--cc-font-typewriter);
+  font-size: 0.875rem;
+  color: var(--cc-text-primary, #324D88);
+  max-width: 400px;
+  margin: 0 auto 0.5rem;
+}
+
+.comingSoonHint {
+  font-size: 0.75rem !important;
+  color: var(--cc-text-muted, #6B8BC8) !important;
+  font-style: italic;
+}
+
+/* Table of Contents */
+.toc {
+  position: sticky;
+  top: 2rem;
+  padding: 2rem 0 2rem 1rem;
+  font-family: var(--cc-font-typewriter);
+  width: 100%;
+  max-height: calc(100vh - 4rem);
+  overflow-y: auto;
+}
+
+.tocTitle {
+  font-size: 0.625rem;
+  font-weight: 700;
+  color: var(--cc-text-muted, #6B8BC8);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  margin-bottom: 0.75rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--cc-border-muted, #6B8BC8);
+}
+
+.tocList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.tocItem {
+  margin: 0;
+  padding: 0;
+}
+
+.tocItem button {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0.25rem 0;
+  font-family: var(--cc-font-typewriter);
+  font-size: 0.6875rem;
+  color: var(--cc-text-muted, #6B8BC8);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  line-height: 1.4;
+}
+
+.tocItem button:hover {
+  color: var(--cc-text-primary, #324D88);
+}
+
+.tocLevel1 button {
+  font-weight: 700;
+  font-size: 0.75rem;
+  color: var(--cc-text-primary, #324D88);
+  padding-top: 0.5rem;
+}
+
+.tocLevel2 button {
+  padding-left: 0;
+}
+
+.tocLevel3 button {
+  padding-left: 0.75rem;
+  font-size: 0.625rem;
+}
+
+.tocActive button {
+  color: var(--cc-text-red, #8B1538) !important;
+  font-weight: 700;
+}

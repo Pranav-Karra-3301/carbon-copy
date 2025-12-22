@@ -1,0 +1,73 @@
+{
+  "name": "@prnv/carbon-copy",
+  "version": "0.0.1",
+  "description": "Beautiful vintage form UI components for React - typewriter aesthetics, dense layouts, 1970s charm",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "import": "./dist/index.mjs",
+      "require": "./dist/index.js"
+    },
+    "./styles.css": "./dist/index.css",
+    "./styles": "./dist/index.css",
+    "./theme": {
+      "types": "./dist/theme/index.d.ts",
+      "import": "./dist/theme/index.mjs",
+      "require": "./dist/theme/index.js"
+    }
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "files": [
+    "dist"
+  ],
+  "sideEffects": [
+    "**/*.css"
+  ],
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "build:lib": "tsup",
+    "start": "next start",
+    "lint": "eslint"
+  },
+  "peerDependencies": {
+    "react": ">=18.0.0",
+    "react-dom": ">=18.0.0"
+  },
+  "dependencies": {
+    "next": "16.1.0",
+    "react": "19.2.3",
+    "react-dom": "19.2.3"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "eslint": "^9",
+    "eslint-config-next": "16.1.0",
+    "tsup": "^8.5.1",
+    "typescript": "^5"
+  },
+  "keywords": [
+    "react",
+    "components",
+    "vintage",
+    "forms",
+    "ui",
+    "1970s",
+    "retro",
+    "typewriter",
+    "carbon-copy"
+  ],
+  "author": "Pranav Karra",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Pranav-Karra-3301/carbon-copy"
+  }
+}

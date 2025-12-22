@@ -1,0 +1,170 @@
+/* DenseGrid - Zero-gap grid layout for vintage forms */
+
+.denseGrid {
+  display: grid;
+  width: 100%;
+  font-family: var(--cc-font-typewriter);
+}
+
+/* Collapsed mode - cells share borders */
+.collapsed {
+  gap: 0;
+}
+
+/* Background variants */
+.bgNone {
+  background-color: transparent;
+}
+
+.bgTeal {
+  background-color: var(--cc-bg-form, #A8D5D8);
+}
+
+.bgPaper {
+  background-color: var(--cc-bg-paper, #F5F2E8);
+}
+
+/* Border around entire grid */
+.bordered {
+  border: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.borderThin {
+  border-width: 1px;
+}
+
+.borderMedium {
+  border-width: 2px;
+}
+
+.borderThick {
+  border-width: 3px;
+}
+
+/* Cell styles */
+.cell {
+  display: flex;
+  min-width: 0;
+  word-break: break-word;
+}
+
+/* Padding variants */
+.paddingNone {
+  padding: 0;
+}
+
+.paddingXs {
+  padding: 0.125rem 0.25rem;
+}
+
+.paddingSm {
+  padding: 0.25rem 0.5rem;
+}
+
+.paddingMd {
+  padding: 0.5rem 0.75rem;
+}
+
+/* Horizontal alignment */
+.alignLeft {
+  justify-content: flex-start;
+  text-align: left;
+}
+
+.alignCenter {
+  justify-content: center;
+  text-align: center;
+}
+
+.alignRight {
+  justify-content: flex-end;
+  text-align: right;
+}
+
+/* Vertical alignment */
+.valignTop {
+  align-items: flex-start;
+}
+
+.valignMiddle {
+  align-items: center;
+}
+
+.valignBottom {
+  align-items: flex-end;
+}
+
+/* Text colors */
+.textDefault {
+  color: var(--cc-text-primary, #324D88);
+}
+
+.textRed {
+  color: var(--cc-text-red, #8B1538);
+}
+
+.textNavy {
+  color: var(--cc-header-navy, #1E3A5F);
+}
+
+.textMuted {
+  color: var(--cc-text-muted, #6B8BC8);
+}
+
+/* Font weights */
+.weightNormal {
+  font-weight: 400;
+}
+
+.weightMedium {
+  font-weight: 500;
+}
+
+.weightBold {
+  font-weight: 700;
+}
+
+/* Font sizes */
+.sizeXs {
+  font-size: 0.625rem;
+}
+
+.sizeSm {
+  font-size: 0.75rem;
+}
+
+.sizeMd {
+  font-size: 0.875rem;
+}
+
+.sizeLg {
+  font-size: 1rem;
+}
+
+/* Text transform */
+.uppercase {
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Cell borders */
+.cellBordered {
+  border: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.borderTop {
+  border-top: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.borderRight {
+  border-right: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.borderBottom {
+  border-bottom: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.borderLeft {
+  border-left: 1px solid var(--cc-border-primary, #324D88);
+}
+

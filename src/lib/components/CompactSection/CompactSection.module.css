@@ -1,0 +1,147 @@
+/* CompactSection - Tight section with minimal spacing */
+
+.compactSection {
+  display: flex;
+  flex-direction: column;
+  font-family: var(--cc-font-typewriter);
+  background-color: transparent;
+}
+
+/* Border variants */
+.borderNone {
+  border: none;
+}
+
+.borderAll {
+  border: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.borderTop {
+  border-top: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.borderBottom {
+  border-bottom: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.borderLeft {
+  border-left: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.borderRight {
+  border-right: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.borderHorizontal {
+  border-top: 1px solid var(--cc-border-primary, #324D88);
+  border-bottom: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.borderVertical {
+  border-left: 1px solid var(--cc-border-primary, #324D88);
+  border-right: 1px solid var(--cc-border-primary, #324D88);
+}
+
+/* Border weights */
+.borderWeightThin {
+  border-width: 1px;
+}
+
+.borderWeightMedium {
+  border-width: 2px;
+}
+
+.borderWeightThick {
+  border-width: 3px;
+}
+
+/* Padding variants */
+.paddingNone {
+  /* No padding on section */
+}
+
+.paddingXs .content {
+  padding: 0.125rem 0.25rem;
+}
+
+.paddingSm .content {
+  padding: 0.25rem 0.5rem;
+}
+
+.paddingMd .content {
+  padding: 0.5rem 0.75rem;
+}
+
+/* Header styles */
+.header {
+  display: flex;
+  align-items: baseline;
+  gap: 0.125rem;
+  padding: 0.25rem 0.5rem;
+  font-weight: 700;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  border-bottom: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.titleText {
+  /* Title text styles */
+}
+
+.asterisk {
+  font-size: 0.875rem;
+}
+
+/* Title colors */
+.titleRed {
+  color: var(--cc-text-red, #8B1538);
+}
+
+.titleNavy {
+  color: var(--cc-header-navy, #1E3A5F);
+}
+
+.titleDefault {
+  color: var(--cc-text-primary, #324D88);
+}
+
+/* Content area */
+.content {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Column layouts */
+.columns1 {
+  /* Single column default */
+}
+
+.columns2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.columns3 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+}
+
+.columns4 {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+
+/* Column gaps */
+.columnGapNone {
+  gap: 0;
+}
+
+.columnGapXs {
+  gap: 0.25rem;
+}
+
+.columnGapSm {
+  gap: 0.5rem;
+}
+

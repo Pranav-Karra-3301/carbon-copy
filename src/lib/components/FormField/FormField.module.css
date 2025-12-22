@@ -1,0 +1,213 @@
+/* FormField Component Styles */
+
+.formField {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  font-family: var(--cc-font-typewriter);
+}
+
+/* Label positioning */
+.positionTop {
+  flex-direction: column;
+}
+
+.positionLeft {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.positionInline {
+  flex-direction: row;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+/* Label styles */
+.label {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--cc-text-primary, #324D88);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  flex-shrink: 0;
+}
+
+.required {
+  color: #8B1538;
+  margin-left: 0.125rem;
+}
+
+/* Input wrapper */
+.inputWrapper {
+  position: relative;
+  display: flex;
+}
+
+/* Base input styles */
+.input {
+  width: 100%;
+  font-family: var(--cc-font-typewriter);
+  font-size: 0.875rem;
+  letter-spacing: 0.08em;
+  color: var(--cc-text-primary, #324D88);
+  background-color: transparent;
+  padding: 0.375rem 0.5rem;
+  border: 1px solid var(--cc-border-primary, #324D88);
+  transition: border-color 0.15s ease, background-color 0.15s ease;
+}
+
+.input::placeholder {
+  color: #999999;
+  font-style: italic;
+}
+
+.input:focus {
+  outline: none;
+  border-color: #8B1538;
+  box-shadow: inset 0 0 0 1px #8B1538;
+}
+
+.input:disabled {
+  background-color: #E8E5DC;
+  cursor: not-allowed;
+}
+
+.input:read-only {
+  background-color: transparent;
+  border-style: dashed;
+}
+
+/* Variant: Default */
+.default .input {
+  /* Base styles apply */
+}
+
+/* Variant: Underline */
+.underline .input {
+  border: none;
+  border-bottom: 2px solid var(--cc-border-primary, #324D88);
+  background-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.underline .input:focus {
+  border-bottom-color: #8B1538;
+  box-shadow: none;
+}
+
+/* Variant: Boxed (emphasized) */
+.boxed .input {
+  border-width: 2px;
+  background-color: transparent;
+}
+
+/* Variant: Minimal */
+.minimal .input {
+  border: none;
+  background-color: transparent;
+  border-bottom: 1px dotted #666666;
+  padding: 0.25rem 0;
+}
+
+.minimal .input:focus {
+  border-bottom-color: #8B1538;
+  border-bottom-style: solid;
+  box-shadow: none;
+}
+
+/* Variant: Handwriting */
+.handwriting .input {
+  font-style: italic;
+  transform: rotate(-0.5deg);
+  color: var(--cc-text-handwriting, #1A3A5F);
+  font-weight: 400;
+  letter-spacing: 0.1em;
+  border-width: 2px;
+  background-color: #FFFFFF;
+}
+
+/* Variant: None (no border) */
+.none .input {
+  border: none;
+  background-color: transparent;
+  padding: 0.25rem 0;
+}
+
+.none .input:focus {
+  box-shadow: none;
+}
+
+/* Variant: Dotted */
+.dotted .input {
+  border: none;
+  border-bottom: 1px dotted var(--cc-border-muted, #6B8BC8);
+  background-color: transparent;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.dotted .input:focus {
+  border-bottom-color: var(--cc-text-red, #8B1538);
+  box-shadow: none;
+}
+
+/* Size variants */
+.xs .input {
+  padding: 0.125rem 0.25rem;
+  font-size: 0.625rem;
+}
+
+.sm .input {
+  padding: 0.25rem 0.375rem;
+  font-size: 0.75rem;
+}
+
+.md .input {
+  padding: 0.375rem 0.5rem;
+  font-size: 0.875rem;
+}
+
+.lg .input {
+  padding: 0.5rem 0.75rem;
+  font-size: 1rem;
+}
+
+.full {
+  width: 100%;
+}
+
+.full .input {
+  width: 100%;
+}
+
+/* Error state */
+.hasError .input {
+  border-color: #C41E3A;
+  background-color: #FFF5F5;
+}
+
+.hasError .input:focus {
+  border-color: #C41E3A;
+  box-shadow: inset 0 0 0 1px #C41E3A;
+}
+
+/* Helper and error text */
+.helperText {
+  font-size: 0.625rem;
+  color: #666666;
+  font-style: italic;
+}
+
+.errorText {
+  font-size: 0.625rem;
+  color: #C41E3A;
+  font-weight: 500;
+}
+
+/* Disabled state */
+.disabled {
+  opacity: 0.6;
+}

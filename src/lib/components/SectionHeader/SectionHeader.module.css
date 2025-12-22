@@ -1,0 +1,106 @@
+/* SectionHeader Component Styles */
+
+.sectionHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-family: var(--cc-font-typewriter);
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  margin: 0;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--cc-border-primary, #324D88);
+}
+
+/* Variants */
+.primary {
+  background-color: transparent;
+  color: var(--cc-text-red, #8B1538);
+}
+
+.secondary {
+  background-color: transparent;
+  color: var(--cc-text-red, #8B1538);
+}
+
+.dark {
+  background-color: transparent;
+  color: var(--cc-header-navy, #1E3A5F);
+}
+
+.navy {
+  background-color: transparent;
+  color: var(--cc-header-navy, #1E3A5F);
+}
+
+.outlined {
+  background-color: transparent;
+  color: #8B1538;
+  border: 2px solid #8B1538;
+}
+
+/* Sizes */
+.sm {
+  font-size: 0.75rem;
+  padding: 0.375rem 0.5rem;
+}
+
+.md {
+  font-size: 0.875rem;
+  padding: 0.5rem 0.75rem;
+}
+
+.lg {
+  font-size: 1rem;
+  padding: 0.625rem 1rem;
+}
+
+/* Alignment */
+.alignLeft {
+  text-align: left;
+}
+
+.alignCenter {
+  text-align: center;
+  justify-content: center;
+}
+
+.alignRight {
+  text-align: right;
+  justify-content: flex-end;
+}
+
+/* Content layout */
+.content {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.sectionNumber {
+  font-weight: 700;
+}
+
+.icon {
+  display: flex;
+  align-items: center;
+}
+
+.text {
+  font-weight: 700;
+}
+
+.rightContent {
+  font-size: 0.75rem;
+  font-weight: 400;
+  text-transform: none;
+  letter-spacing: 0.05em;
+}
+
+/* Full width */
+.fullWidth {
+  margin-left: 0;
+  margin-right: 0;
+  border-left: none;
+  border-right: none;
+}

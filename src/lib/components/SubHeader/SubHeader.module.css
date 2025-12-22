@@ -1,0 +1,78 @@
+/* SubHeader - Section sub-headers */
+
+.subHeader {
+  display: flex;
+  align-items: baseline;
+  gap: 0.5rem;
+  padding: 0.125rem 0.25rem;
+  font-family: var(--cc-font-typewriter);
+  font-weight: 700;
+}
+
+/* Color variants */
+.colorDefault {
+  color: var(--cc-text-primary, #324D88);
+}
+
+.colorNavy {
+  color: var(--cc-header-navy, #1E3A5F);
+}
+
+.colorRed {
+  color: var(--cc-text-red, #8B1538);
+}
+
+/* Size variants */
+.sizeXs {
+  font-size: 0.625rem;
+  padding: 0.0625rem 0.125rem;
+}
+
+.sizeSm {
+  font-size: 0.75rem;
+  padding: 0.125rem 0.25rem;
+}
+
+.sizeMd {
+  font-size: 0.875rem;
+  padding: 0.1875rem 0.375rem;
+}
+
+/* Border variants */
+.borderNone {
+  border: none;
+}
+
+.borderTop {
+  border-top: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.borderBottom {
+  border-bottom: 1px solid var(--cc-border-primary, #324D88);
+}
+
+.borderBoth {
+  border-top: 1px solid var(--cc-border-primary, #324D88);
+  border-bottom: 1px solid var(--cc-border-primary, #324D88);
+}
+
+/* Text */
+.text {
+  /* Main text */
+}
+
+/* Also see reference */
+.alsoSee {
+  font-weight: 400;
+  font-size: 0.625rem;
+  font-style: italic;
+  color: var(--cc-text-muted, #6B8BC8);
+}
+
+/* Includes text */
+.includes {
+  font-weight: 400;
+  font-size: 0.625rem;
+  margin-left: auto;
+}
+

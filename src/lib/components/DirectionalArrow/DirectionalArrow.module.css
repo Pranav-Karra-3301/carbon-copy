@@ -1,0 +1,33 @@
+/* DirectionalArrow Component Styles */
+
+.arrow {
+  display: inline-block;
+  flex-shrink: 0;
+  color: var(--cc-header-navy, #1E3A5F);
+  vertical-align: middle;
+}
+
+/* Size variants */
+.sm {
+  width: 12px;
+  height: 12px;
+}
+
+.md {
+  width: 16px;
+  height: 16px;
+}
+
+.lg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Direction variants - rotation handled by SVG path */
+.left,
+.right,
+.up,
+.down {
+  /* Direction is handled by SVG path */
+}
+

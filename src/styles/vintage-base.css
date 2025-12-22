@@ -1,0 +1,112 @@
+/* Carbon Copy - Vintage Form UI Base Styles */
+
+/* CSS Custom Properties (Design Tokens) */
+:root {
+  /* Backgrounds */
+  --cc-bg-form: #A8D5D8;
+  --cc-bg-form-alt: #9CCBCE;
+  --cc-bg-paper: #F5F2E8;
+  --cc-bg-muted: #E8E5DC;
+
+  /* Headers */
+  --cc-header-primary: #8B1538;
+  --cc-header-secondary: #4A0D1F;
+  --cc-header-accent: #C41E3A;
+
+  /* Borders */
+  --cc-border-primary: #1A1A1A;
+  --cc-border-thin: #2D2D2D;
+  --cc-border-muted: #666666;
+
+  /* Text */
+  --cc-text-primary: #1A1A1A;
+  --cc-text-secondary: #333333;
+  --cc-text-on-dark: #F5F2E8;
+  --cc-text-muted: #666666;
+  --cc-text-typewriter: #0A0A0A;
+
+  /* Interactive */
+  --cc-interactive-checkbox: #1A1A1A;
+  --cc-interactive-strikethrough: #1A1A1A;
+  --cc-interactive-highlight: #FFE4B5;
+
+  /* Typography */
+  --cc-font-typewriter: "American Typewriter", "Courier Prime", "Courier New", Courier, monospace;
+  --cc-font-mono: "IBM Plex Mono", "Consolas", "Monaco", monospace;
+  --cc-font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+
+  /* Font Sizes */
+  --cc-text-xs: 0.625rem;
+  --cc-text-sm: 0.75rem;
+  --cc-text-base: 0.875rem;
+  --cc-text-md: 1rem;
+  --cc-text-lg: 1.125rem;
+  --cc-text-xl: 1.25rem;
+  --cc-text-2xl: 1.5rem;
+
+  /* Spacing */
+  --cc-space-1: 0.25rem;
+  --cc-space-2: 0.5rem;
+  --cc-space-3: 0.75rem;
+  --cc-space-4: 1rem;
+  --cc-space-6: 1.5rem;
+  --cc-space-8: 2rem;
+}
+
+/* Base vintage form container */
+.vintage-form {
+  font-family: var(--cc-font-typewriter);
+  font-size: var(--cc-text-base);
+  color: var(--cc-text-primary);
+  background-color: var(--cc-bg-form);
+  letter-spacing: 0.05em;
+  line-height: 1.5;
+}
+
+/* Paper texture overlay (optional) */
+.vintage-form--textured {
+  background-image:
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  background-color: var(--cc-bg-form);
+}
+
+/* Reset for form elements within vintage forms */
+.vintage-form *,
+.vintage-form *::before,
+.vintage-form *::after {
+  box-sizing: border-box;
+}
+
+.vintage-form input,
+.vintage-form select,
+.vintage-form textarea {
+  font-family: inherit;
+  font-size: inherit;
+  letter-spacing: inherit;
+}
+
+/* Utility classes */
+.cc-uppercase {
+  text-transform: uppercase;
+}
+
+.cc-bold {
+  font-weight: 700;
+}
+
+.cc-text-center {
+  text-align: center;
+}
+
+.cc-text-right {
+  text-align: right;
+}
+
+/* Print styles */
+@media print {
+  .vintage-form {
+    background-color: white !important;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+}
