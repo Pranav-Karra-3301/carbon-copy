@@ -1,0 +1,90 @@
+---
+description: Documentation guidelines for Carbon Copy docs site
+globs:
+  - "src/app/docs/**/*.tsx"
+  - "src/app/docs/**/*.ts"
+---
+
+# Documentation Guidelines
+
+## Documentation Page Structure
+
+Every component needs a documentation page at:
+`src/app/docs/components/[component-name]/page.tsx`
+
+## Page Template
+
+```tsx
+import { ComponentName } from '@/lib';
+
+export const metadata = {
+  title: 'ComponentName - Carbon Copy',
+  description: 'Description of the component',
+};
+
+export default function ComponentNamePage() {
+  return (
+    <div className="docs-page">
+      <h1>ComponentName</h1>
+      <p className="lead">Brief description of what the component does.</p>
+
+      {/* Basic Example */}
+      <section>
+        <h2>Basic Usage</h2>
+        <div className="example">
+          <ComponentName>Example content</ComponentName>
+        </div>
+        <CodeBlock language="tsx">{`
+<ComponentName>Example content</ComponentName>
+        `}</CodeBlock>
+      </section>
+
+      {/* Variants */}
+      <section>
+        <h2>Variants</h2>
+        {/* Show each variant */}
+      </section>
+
+      {/* Props Table */}
+      <section>
+        <h2>Props</h2>
+        <PropsTable props={[
+          { name: 'variant', type: "'default' | 'dense'", default: "'default'", description: '...' },
+          { name: 'className', type: 'string', default: '-', description: 'Additional CSS classes' },
+        ]} />
+      </section>
+    </div>
+  );
+}
+```
+
+## Required Sections
+
+1. **Title & Description** - What the component is
+2. **Basic Usage** - Simple example with code
+3. **Variants** - All available variants with examples
+4. **Props Table** - Complete prop documentation
+5. **Accessibility** - Any a11y considerations
+6. **Best Practices** - When and how to use
+
+## Code Examples
+
+- Show realistic, copy-pasteable examples
+- Include imports in first example
+- Keep examples focused and minimal
+- Show common use cases
+
+## Props Table Format
+
+| Prop | Type | Default | Description |
+|------|------|---------|-------------|
+| variant | 'default' \| 'dense' | 'default' | Visual style variant |
+| className | string | - | Additional CSS classes |
+| children | ReactNode | - | Content to display |
+
+## Writing Style
+
+- Use clear, concise language
+- Focus on practical usage
+- Include "do" and "don't" examples when helpful
+- Reference related components

@@ -1,0 +1,90 @@
+---
+description: CSS styling guidelines for Carbon Copy components
+globs:
+  - "**/*.css"
+  - "**/*.module.css"
+---
+
+# CSS Styling Guidelines
+
+## CSS Modules Only
+
+All component styles must use CSS Modules (`.module.css` files). Never use:
+- Inline styles
+- Tailwind classes
+- Global CSS for components
+- CSS-in-JS libraries
+
+## CSS Custom Properties
+
+Always use CSS variables for themeable values:
+
+```css
+.component {
+  /* Text colors */
+  color: var(--cc-text-primary);          /* #324D88 navy */
+
+  /* Background colors */
+  background: var(--cc-bg-paper);          /* #F5F2E8 cream */
+  background: var(--cc-bg-form);           /* #A8D5D8 teal */
+
+  /* Borders */
+  border: 1px solid var(--cc-border-primary);
+
+  /* Typography */
+  font-family: var(--cc-font-typewriter);
+}
+```
+
+## Color Palette
+
+| Variable | Value | Usage |
+|----------|-------|-------|
+| `--cc-text-primary` | `#324D88` | Navy blue main text |
+| `--cc-text-red` | `#8B1538` | Maroon accent text |
+| `--cc-text-muted` | `#666666` | Muted/secondary text |
+| `--cc-bg-form` | `#A8D5D8` | Light teal background |
+| `--cc-bg-paper` | `#F5F2E8` | Cream paper background |
+| `--cc-border-primary` | `#324D88` | Primary borders |
+| `--cc-border-muted` | `#666666` | Muted borders |
+
+## Typography
+
+- Primary font: `var(--cc-font-typewriter)` (Berkeley Mono stack)
+- Letter spacing: `0.08em` for authentic typewriter feel
+- Font weights: 400 (normal), 500 (medium), 700 (bold)
+
+## Naming Conventions
+
+```css
+/* Base component class */
+.component { }
+
+/* Variant modifiers (match prop values) */
+.default { }
+.dense { }
+.underline { }
+
+/* State modifiers */
+.disabled { }
+.focused { }
+.error { }
+
+/* Child elements */
+.label { }
+.input { }
+.icon { }
+```
+
+## Spacing
+
+Use the spacing scale (base: 4px):
+- `4px`, `8px`, `12px`, `16px`, `20px`, `24px`, `32px`, `48px`
+
+## Vintage Aesthetic
+
+- Use typewriter-style fonts
+- Keep borders visible and defined
+- Use the established color palette
+- Aim for dense, form-like layouts
+- Consider print styles for form components

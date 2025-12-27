@@ -1,0 +1,89 @@
+---
+description: Git workflow and commit conventions for Carbon Copy
+alwaysApply: false
+---
+
+# Git Workflow
+
+## Branch Strategy
+
+- `main` - Production-ready code
+- `feature/*` - New features
+- `fix/*` - Bug fixes
+- `docs/*` - Documentation updates
+
+## Commit Message Format
+
+Use Conventional Commits:
+
+```
+<type>: <description>
+
+[optional body]
+
+[optional footer]
+```
+
+### Types
+
+| Type | Description |
+|------|-------------|
+| `feat` | New feature or component |
+| `fix` | Bug fix |
+| `docs` | Documentation changes |
+| `style` | Code formatting (not CSS) |
+| `refactor` | Code restructuring |
+| `test` | Adding/updating tests |
+| `chore` | Maintenance tasks |
+
+### Examples
+
+```bash
+feat: add SubHeader component with size variants
+
+fix: correct Checkbox focus ring in Safari
+Fixes #42
+
+docs: add FormGrid usage examples and best practices
+
+refactor: simplify theme generation logic
+- Extract color calculations to separate function
+- Add memoization for performance
+
+chore: update tsup to v8.5.1
+```
+
+## Commit Best Practices
+
+1. **Atomic commits** - One logical change per commit
+2. **Imperative mood** - "add" not "added" or "adds"
+3. **No period** at end of subject line
+4. **72 character limit** for subject line
+5. **Reference issues** when applicable: `Fixes #42`
+
+## Before Committing
+
+```bash
+# 1. Check for lint errors
+npm run lint
+
+# 2. Verify build works
+npm run build:lib
+
+# 3. Stage changes
+git add .
+
+# 4. Commit with message
+git commit -m "feat: your descriptive message"
+```
+
+## Pull Request Guidelines
+
+1. Create descriptive PR title using conventional commit format
+2. Fill out PR template with:
+   - What changed
+   - Why it changed
+   - How to test
+3. Link related issues
+4. Request review from maintainers
+5. Ensure CI passes before merging

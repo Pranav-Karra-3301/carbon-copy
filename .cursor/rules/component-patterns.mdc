@@ -1,0 +1,82 @@
+---
+description: Component implementation patterns for Carbon Copy React components
+globs:
+  - "src/lib/components/**/*.tsx"
+  - "src/lib/components/**/*.ts"
+---
+
+# Component Implementation Pattern
+
+## Required Structure
+
+Every component MUST follow this exact pattern:
+
+```tsx
+'use client';
+
+import React, { forwardRef, useId } from 'react';
+import { cn } from '../../utils';
+import styles from './ComponentName.module.css';
+
+export interface ComponentNameProps {
+  /** JSDoc description for the prop */
+  variant?: 'default' | 'dense' | 'underline';
+  /** Additional CSS classes */
+  className?: string;
+  /** Child elements */
+  children?: React.ReactNode;
+}
+
+export const ComponentName = forwardRef<HTMLDivElement, ComponentNameProps>(
+  ({ variant = 'default', className, children, ...props }, ref) => {
+    const id = useId();
+
+    return (
+      <div
+        ref={ref}
+        className={cn(styles.component, styles[variant], className)}
+        {...props}
+      >
+        {children}
+      </div>
+    );
+  }
+);
+
+ComponentName.displayName = 'ComponentName';
+```
+
+## Mandatory Requirements
+
+1. **'use client'** - Always include for Next.js App Router compatibility
+2. **forwardRef** - Use on all components that render DOM elements
+3. **useId** - Generate unique IDs for accessibility
+4. **cn() utility** - Import from `../../utils` for class composition
+5. **displayName** - Set for React DevTools debugging
+6. **JSDoc comments** - Required on all props
+7. **Default values** - Destructure with defaults in function params
+8. **Spread props** - Always support arbitrary HTML attributes with `...props`
+9. **className prop** - Allow external style customization
+
+## TypeScript Requirements
+
+- Define explicit interfaces for all props
+- Use `React.ReactNode` for children
+- Use specific HTML element types for refs (`HTMLDivElement`, `HTMLInputElement`, etc.)
+- No `any` types allowed
+
+## Accessibility
+
+- Use semantic HTML elements
+- Include ARIA attributes where appropriate
+- Ensure keyboard navigation works
+- Use `useId()` for label-input associations
+
+## File Organization
+
+Each component needs its own directory:
+```
+src/lib/components/ComponentName/
+├── index.tsx              # Component implementation
+└── ComponentName.module.css   # Scoped styles
+```

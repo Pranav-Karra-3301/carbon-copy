@@ -1,0 +1,135 @@
+---
+description: TypeScript coding standards for Carbon Copy
+globs:
+  - "**/*.ts"
+  - "**/*.tsx"
+---
+
+# TypeScript Standards
+
+## Strict Mode
+
+This project uses TypeScript strict mode. All these must be satisfied:
+- `strict: true`
+- `noImplicitAny: true`
+- `strictNullChecks: true`
+
+## Type Definitions
+
+### Component Props
+
+```tsx
+export interface ComponentNameProps {
+  /** Brief description */
+  variant?: 'default' | 'dense' | 'underline';
+  /** Additional CSS classes */
+  className?: string;
+  /** Child elements */
+  children?: React.ReactNode;
+}
+```
+
+### Use Specific Types
+
+```tsx
+// GOOD - Specific types
+const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {};
+const inputRef = useRef<HTMLInputElement>(null);
+
+// BAD - Avoid any
+const handleClick = (event: any) => {};  // Never do this
+```
+
+### forwardRef Typing
+
+```tsx
+export const Component = forwardRef<HTMLDivElement, ComponentProps>(
+  (props, ref) => {
+    return <div ref={ref} {...props} />;
+  }
+);
+```
+
+## Imports
+
+### Order imports consistently:
+
+```tsx
+// 1. React imports
+import React, { forwardRef, useId, useState } from 'react';
+
+// 2. Internal utilities
+import { cn } from '../../utils';
+
+// 3. Styles
+import styles from './Component.module.css';
+
+// 4. Types (if separate)
+import type { ComponentProps } from './types';
+```
+
+## Exports
+
+### Named exports preferred:
+
+```tsx
+// GOOD - Named export
+export const ComponentName = forwardRef<...>(...);
+export interface ComponentNameProps { ... }
+
+// Components should also have displayName
+ComponentName.displayName = 'ComponentName';
+```
+
+### Main index.ts exports:
+
+```tsx
+// src/lib/index.ts
+export { VintageTable, VintageTableRow, VintageTableCell } from './components/VintageTable';
+export type { VintageTableProps, VintageTableRowProps } from './components/VintageTable';
+```
+
+## Common Patterns
+
+### Optional props with defaults
+
+```tsx
+interface Props {
+  variant?: 'a' | 'b';  // Optional in interface
+}
+
+// Default in destructuring
+const Component = ({ variant = 'a' }: Props) => {};
+```
+
+### Event handlers
+
+```tsx
+interface Props {
+  onChange?: (value: string) => void;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
+}
+```
+
+### Children types
+
+```tsx
+interface Props {
+  children?: React.ReactNode;      // Any valid React child
+  render?: () => React.ReactNode;  // Render prop
+}
+```
+
+## Forbidden Patterns
+
+```tsx
+// NEVER use any
+const data: any = {};
+
+// NEVER use @ts-ignore
+// @ts-ignore
+someCode();
+
+// NEVER use non-null assertion carelessly
+const value = maybeNull!;  // Avoid unless truly safe
+```
