@@ -1,0 +1,53 @@
+---
+description: Carbon Copy project context and identity - vintage 1970s React component library
+alwaysApply: true
+---
+
+# Carbon Copy - Project Context
+
+## Identity
+
+Carbon Copy is a vintage 1970s-inspired form UI component library for React. It recreates the authentic aesthetic of classic carbon copy forms and Chevrolet dealer order forms.
+
+## Core Principles
+
+1. **Authenticity** - Every component should look like it belongs on a 1970s form
+2. **Zero Dependencies** - Library has no runtime deps (React is peer dep only)
+3. **Type Safety** - Full TypeScript with strict mode
+4. **Accessibility** - ARIA-compliant, keyboard-navigable
+5. **Simplicity** - Minimal API, intuitive usage
+
+## Tech Stack
+
+- React 19+ (peer dependency)
+- TypeScript 5+ (strict mode)
+- CSS Modules with CSS Custom Properties
+- tsup (library bundler)
+- Next.js 16+ (documentation site)
+- ESLint 9+
+
+## Package Info
+
+```
+Name: @prnv/carbon-copy
+Version: 0.0.1
+License: MIT
+```
+
+## Key Directories
+
+- `src/lib/components/` - React components (18 total)
+- `src/lib/tokens/` - Design tokens (colors, spacing, typography)
+- `src/lib/theme/` - Theme system
+- `src/lib/utils/` - Utilities (cn helper)
+- `src/app/` - Next.js documentation site
+- `dist/` - Built library output
+
+## Commands
+
+```bash
+npm run dev          # Start dev server
+npm run build:lib    # Build component library
+npm run build        # Build docs site
+npm run lint         # Run ESLint
+```

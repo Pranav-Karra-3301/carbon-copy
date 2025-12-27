@@ -1,0 +1,71 @@
+---
+description: Critical safety constraints and rules that must never be violated
+alwaysApply: true
+---
+
+# Safety Constraints
+
+## NEVER Do These
+
+These constraints are absolute and must never be violated:
+
+### Dependencies
+- **NEVER add npm dependencies** - Library must remain zero-dependency
+- React/ReactDOM are peer dependencies only
+
+### TypeScript
+- **NEVER use `any` type** - TypeScript strict mode is enforced
+- **NEVER use `@ts-ignore`** - Fix the type issue properly
+- **NEVER skip type definitions** - All props need interfaces
+
+### Breaking Changes
+- **NEVER remove exports** - This breaks consumers
+- **NEVER rename exports** - This breaks consumers
+- **NEVER change prop types** incompatibly without major version
+
+### Styling
+- **NEVER use inline styles** - Use CSS Modules only
+- **NEVER use Tailwind** - Project uses CSS Modules
+- **NEVER hardcode colors** - Use CSS custom properties
+
+### Accessibility
+- **NEVER skip ARIA attributes** on interactive elements
+- **NEVER remove keyboard support**
+- **NEVER use non-semantic elements** for interactive controls
+
+### Git
+- **NEVER commit without linting** - Run `npm run lint` first
+- **NEVER push directly to main** - Use feature branches
+- **NEVER commit secrets** or API keys
+
+## ALWAYS Do These
+
+### Before Any Code Change
+1. Run `npm run lint` to check for issues
+2. Run `npm run build:lib` to verify compilation
+3. Test changes in the dev server (`npm run dev`)
+
+### For Every Component
+1. Use `forwardRef` for ref forwarding
+2. Include `displayName` for debugging
+3. Support `className` prop
+4. Spread remaining props with `...props`
+5. Add JSDoc comments on props
+
+### For Every Commit
+1. Use conventional commit format
+2. Reference issue numbers when applicable
+3. Keep commits atomic and focused
+4. Test the build before pushing
+
+## Code Review Checklist
+
+Before submitting any change:
+
+- [ ] TypeScript compiles without errors
+- [ ] ESLint passes with no warnings
+- [ ] No new dependencies added
+- [ ] CSS uses custom properties
+- [ ] Component follows the required pattern
+- [ ] Accessibility attributes included
+- [ ] Documentation updated if needed
